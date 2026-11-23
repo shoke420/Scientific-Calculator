@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="calc-header">
+      <span>CALCULATOR</span>
+      <span>BASIC / SCI</span>
+    </div>
+
+    <!-- Display Screen -->
+    <input type="text" id="display" readonly placeholder="0" />
+
+    <!-- Basic Keypad (Standard Layout) -->
+    <div class="buttons">
+      <button type="button" class="btn-clear" onclick="clearDisplay()">C</button>
+      <button type="button" class="btn-operator" onclick="backspace()">⌫</button>
+      <button type="button" class="btn-operator" onclick="calculatePercentage()">%</button>
+      <button type="button" class="btn-operator" onclick="appendToDisplay('/')">÷</button>
+
+      <button type="button" onclick="appendToDisplay('7')">7</button>
+      <button type="button" onclick="appendToDisplay('8')">8</button>
+      <button type="button" onclick="appendToDisplay('9')">9</button>
+      <button type="button" class="btn-operator" onclick="appendToDisplay('*')">×</button>
+
+      <button type="button" onclick="appendToDisplay('4')">4</button>
+      <button type="button" onclick="appendToDisplay('5')">5</button>
+      <button type="button" onclick="appendToDisplay('6')">6</button>
+      <button type="button" class="btn-operator" onclick="appendToDisplay('-')">−</button>
+
+      <button type="button" onclick="appendToDisplay('1')">1</button>
+      <button type="button" onclick="appendToDisplay('2')">2</button>
+      <button type="button" onclick="appendToDisplay('3')">3</button>
+      <button type="button" class="btn-operator" onclick="appendToDisplay('+')">+</button>
+
+      <button type="button" onclick="toggleSign()">±</button>
+      <button type="button" onclick="appendToDisplay('0')">0</button>
+      <button type="button" onclick="appendToDisplay('.')">.</button>
+      <button type="button" class="btn-equals" onclick="calculate()">=</button>
+
+      <button type="button" id="modeButton" class="btn-mode" style="grid-column: span 4;" onclick="toggleMode()">SCIENTIFIC MODE</button>
+    </div>
+
+    <!-- Scientific Section (Toggles Open via your toggleMode() JS) -->
+    <div id="scientificMode">
+      <div class="buttons">
+        <button type="button" class="btn-operator" onclick="squareRoot()">√</button>
+        <button type="button" class="btn-operator" onclick="squareNumber()">x²</button>
+        <button type="button" class="btn-operator" onclick="appendToDisplay('^')">xʸ</button>
+        <button type="button" class="btn-operator" onclick="appendToDisplay('Math.PI')">π</button>
+
+        <button type="button" class="btn-operator" onclick="calculateTrig('sin')">sin</button>
+        <button type="button" class="btn-operator" onclick="calculateTrig('cos')">cos</button>
+        <button type="button" class="btn-operator" onclick="calculateTrig('tan')">tan</button>
+        <button type="button" class="btn-operator" onclick="calculateLog()">log</button>
+
+        <button type="button" class="btn-operator" onclick="calculateLn()">ln</button>
+        <button type="button" class="btn-operator" onclick="appendToDisplay('(')">(</button>
+        <button type="button" class="btn-operator" onclick="appendToDisplay(')')">)</button>
+        <button type="button" class="btn-mode" onclick="toggleMode()">BASIC</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
